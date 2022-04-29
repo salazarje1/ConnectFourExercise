@@ -1,6 +1,6 @@
 body {
   background-color: #005555;}
-
+  
 /* game board table */
 #game {
   display: flex;
@@ -60,9 +60,13 @@ button:hover{
   border: dashed 1px lightgray;
 }
 
-#column-top td:hover {
+#column-top.hoverPlayer1 td:hover {
   border-radius: 50%;
   background-color: #069A8E;
+}
+#column-top.hoverPlayer2 td:hover {
+  border-radius: 50%;
+  background-color: #83865b;
 }
 
 /* End game no click */
