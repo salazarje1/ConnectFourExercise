@@ -40,6 +40,7 @@ function makeHtmlBoard() {
   // Create top row of game with id 'column-top' and add event listener
   let top = document.createElement("tr");
   top.setAttribute("id", "column-top");
+  top.classList.add(`hoverPlayer${currPlayer}`); 
   top.addEventListener("click", handleClick);
 
   // add number id for each top row cell.
@@ -80,10 +81,15 @@ function findSpotForCol(x) {
 
 /** placeInTable: update DOM to place piece into HTML table of board */
 function placeInTable(y, x) {
+  const top = document.querySelector("#column-top")
   const piece = document.createElement('div');
   if(currPlayer === 1){
+    top.classList.remove('hoverPlayer1');
+    top.classList.add('hoverPlayer2')
     piece.classList.add('player1');
   } else if (currPlayer === 2){
+    top.classList.remove('hoverPlayer2');
+    top.classList.add('hoverPlayer1')
     piece.classList.add('player2'); 
   }
   piece.classList.add('piece');
@@ -132,7 +138,6 @@ function handleClick(evt) {
   }
 
   // switch players
-  // TODO: switch currPlayer 1 <-> 2
   if(currPlayer === 1){
     currPlayer = 2; 
   } else {
