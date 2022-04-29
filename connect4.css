@@ -1,0 +1,71 @@
+body {
+  background-color: #005555;}
+
+/* game board table */
+#game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 4rem;
+  color: white;
+  margin: 3rem;
+}
+
+button {
+  margin: 1rem;
+  padding: 8px;
+  border-radius: 3px;
+  border: none; 
+  cursor: pointer;
+  transition: color ease 0.5s, background-color ease 0.5s;
+}
+button:hover{
+  color: white;
+  background-color: #069A8E;
+}
+
+#board {
+  padding: 3=2rem 0;
+  width: 30%;
+}
+
+#board td {
+  width: 70px;
+  height: 70px;
+  border: solid 1px #666;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+/*  pieces different color depending on player 1/2 piece */
+.player1 {
+  background-color: #A1E3D8;
+} 
+.player2 {
+  background-color: #F7FF93;
+}
+
+/* column-top is table row of clickable areas for each column */
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  border-radius: 50%;
+  background-color: #069A8E;
+}
+
+/* End game no click */
+.no-click {
+  pointer-events: none;
+}
